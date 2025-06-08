@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>귤나무 복불복 게임</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Scene 1: 시작 화면 -->
+    <div id="scene1" class="scene active">
+        <div class="container">
+            <div class="orchard-background">
+                <div class="tangerine-tree" data-tree="1">🍊</div>
+                <div class="tangerine-tree" data-tree="2">🍊</div>
+                <div class="tangerine-tree" data-tree="3">🍊</div>
+                <div class="tangerine-tree" data-tree="4">🍊</div>
+                <div class="tangerine-tree" data-tree="5">🍊</div>
+                <div class="tangerine-tree" data-tree="6">🍊</div>
+            </div>
+            <div class="content">
+                <h1 class="main-title">신성의 숲</h1>
+                <div class="logo-container">
+                    <img src="sf3.png" alt="신성의 숲 로고" class="main-logo">
+                </div>
+                <h2 class="title">🍊 귤나무를 골라 보세요🍊</h2>
+                <p class="subtitle"> 행운의 선물을 드립니다<br>어떤 선물이 나올까요?</p>
+                <button id="startBtn" class="btn-primary">시작하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scene 2: 귤나무 선택 -->
+    <div id="scene2" class="scene">
+        <div class="container">
+            <h2 class="scene-title big-title">🌳 귤, 하나 골라주세요! 🌳</h2>
+            <div class="tangerine-tree-container">
+                <div class="tree-crown"></div>
+                <div class="tree-trunk"></div>
+                <div class="tangerine-fruits">
+                    <div class="fruit-item" data-tree="1" data-color="red">
+                        <div class="fruit-emoji red-fruit">🍊</div>
+                    </div>
+                    <div class="fruit-item" data-tree="2" data-color="orange">
+                        <div class="fruit-emoji orange-fruit">🍊</div>
+                    </div>
+                    <div class="fruit-item" data-tree="3" data-color="yellow">
+                        <div class="fruit-emoji yellow-fruit">🍊</div>
+                    </div>
+                    <div class="fruit-item" data-tree="4" data-color="green">
+                        <div class="fruit-emoji green-fruit">🍊</div>
+                    </div>
+                    <div class="fruit-item" data-tree="5" data-color="blue">
+                        <div class="fruit-emoji blue-fruit">🍊</div>
+                    </div>
+                    <div class="fruit-item" data-tree="6" data-color="purple">
+                        <div class="fruit-emoji purple-fruit">🍊</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scene 3: 슬롯 애니메이션 -->
+    <div id="scene3" class="scene">
+        <div class="container">
+            <h2 class="scene-title">🎰 행운의 슬롯 머신! 🎰</h2>
+            <div class="slot-machine">
+                <div class="slot-display">
+                    <div id="slotItem" class="slot-item">🔄</div>
+                </div>
+                <div class="slot-message">슬롯이 돌아가고 있어요...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scene 4: 결과 발표 -->
+    <div id="scene4" class="scene">
+        <div class="container">
+            <div class="result-container">
+                <div id="resultIcon" class="result-icon">🎉</div>
+                <h2 id="resultTitle" class="result-title">축하합니다!</h2>
+                <p id="resultMessage" class="result-message">1,000원 쿠폰 당첨!</p>
+                <button id="rewardBtn" class="btn-primary">쿠폰 받기</button>
+                <button id="closeBtn" class="btn-secondary">닫기</button>
+                <p class="brand-message">더 즐거운 여행 되십시오. by 신성의 숲</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scene 5: 쿠폰 수령 -->
+    <div id="scene5" class="scene">
+        <div class="container">
+            <div class="coupon-container">
+                <h2 class="scene-title" style="font-size: 1.8em;">🎊 완전 축하합니다! 🎊 <br> 쿠폰을 받으세요! </h2>
+                <div class="coupon">
+                    <div class="coupon-header">귤나무 과수원</div>
+                    <div class="coupon-amount" id="couponAmount">1,000원 할인</div>
+                    <div class="coupon-code">쿠폰코드: GYOOL2024</div>
+                    <div class="coupon-expire">유효기간: 7일</div>
+                </div>
+                <p class="share-message">내일도 귤나무를 골라보세요!</p>
+                <button id="downloadBtn" class="btn-primary">쿠폰 저장</button>
+                <button id="playAgainBtn" class="btn-secondary">처음으로</button>
+                <p class="brand-message">신성의 숲은 고객님의 더 좋은 여행을 위하여, 항상 최선을 다하겠습니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
