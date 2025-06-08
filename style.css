@@ -557,12 +557,12 @@ body {
         height: 60px;
     }
     
-    /* 모바일에서 귤 위치 조정 - 왼쪽 귤들을 나무 안쪽으로 */
-    .fruit-item[data-tree="1"] { top: 55px; left: 65px; }  /* 더 안쪽으로 */
+    /* 모바일에서 귤 위치 조정 - 1,3,5번 귤을 5px 더 오른쪽으로 */
+    .fruit-item[data-tree="1"] { top: 55px; left: 70px; }  /* 5px 더 오른쪽 */
     .fruit-item[data-tree="2"] { top: 55px; right: 45px; }
-    .fruit-item[data-tree="3"] { top: 120px; left: 55px; } /* 더 안쪽으로 */
+    .fruit-item[data-tree="3"] { top: 120px; left: 60px; } /* 5px 더 오른쪽 */
     .fruit-item[data-tree="4"] { top: 120px; right: 35px; }
-    .fruit-item[data-tree="5"] { top: 185px; left: 60px; } /* 더 안쪽으로 */
+    .fruit-item[data-tree="5"] { top: 185px; left: 65px; } /* 5px 더 오른쪽 */
     .fruit-item[data-tree="6"] { top: 185px; right: 40px; }
     
     .fruit-emoji {
