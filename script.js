@@ -263,41 +263,41 @@ function downloadCoupon() {
     const ctx = canvas.getContext('2d');
     
     canvas.width = 500;
-    canvas.height = 300;
+    canvas.height = 400; // 충분한 여백 확보 (300 → 400, 33% 증가)
     
     // 고급스러운 배경 그라데이션 (더 부드럽게)
-    const bgGradient = ctx.createLinearGradient(0, 0, 500, 300);
+    const bgGradient = ctx.createLinearGradient(0, 0, 500, 400);
     bgGradient.addColorStop(0, '#FFFEF7');  // 아이보리
     bgGradient.addColorStop(0.3, '#FFF8DC'); // 크림색
     bgGradient.addColorStop(0.7, '#FFFACD'); // 레몬시폰
     bgGradient.addColorStop(1, '#F5F5DC');   // 베이지
     ctx.fillStyle = bgGradient;
-    ctx.fillRect(0, 0, 500, 300);
+    ctx.fillRect(0, 0, 500, 400);
     
     // 장식적인 외부 테두리 (더 세련되게)
     ctx.strokeStyle = '#FFD700';
     ctx.lineWidth = 6;
-    ctx.strokeRect(6, 6, 488, 288);
+    ctx.strokeRect(6, 6, 488, 388); // 높이 더 증가
     
     // 내부 장식 테두리 (더 정교하게)
     ctx.strokeStyle = '#FF8C00';
     ctx.lineWidth = 2;
     ctx.setLineDash([12, 4]);
-    ctx.strokeRect(18, 18, 464, 264);
+    ctx.strokeRect(18, 18, 464, 364); // 높이 더 증가
     ctx.setLineDash([]); // 점선 리셋
     
     // 추가 장식 선
     ctx.strokeStyle = '#FFA500';
     ctx.lineWidth = 1;
-    ctx.strokeRect(25, 25, 450, 250);
+    ctx.strokeRect(25, 25, 450, 350); // 높이 더 증가
     
     // 코너 장식
     ctx.font = '30px Arial';
     ctx.textAlign = 'center';
     ctx.fillText('🍊', 40, 45);
     ctx.fillText('🍊', 460, 45);
-    ctx.fillText('🍊', 40, 275);
-    ctx.fillText('🍊', 460, 275);
+    ctx.fillText('🍊', 40, 375); // 하단 코너들 더 아래로 이동
+    ctx.fillText('🍊', 460, 375);
     
     // 상단 제목 - 고급스러운 그림자 효과
     ctx.fillStyle = '#D2691E';
@@ -390,17 +390,17 @@ function downloadCoupon() {
     ctx.font = '18px NexonGothic, Arial';
     const expiryDate = new Date();
     expiryDate.setMonth(expiryDate.getMonth() + 1);
-    ctx.fillText(`유효기간: 수령일로부터 1개월 (${expiryDate.toLocaleDateString('ko-KR')}까지)`, 250, 270);
+    ctx.fillText(`유효기간: 수령일로부터 1개월 (${expiryDate.toLocaleDateString('ko-KR')}까지)`, 250, 315); // 충분한 간격
     
     // 하단 메시지 (사용법 안내)
     ctx.fillStyle = '#666';
     ctx.font = '16px NexonGothic, Arial';
-    ctx.fillText('🏪 쿠폰을 저장하고, 신성의숲 인포메이션에 제시하세요', 250, 285);
+    ctx.fillText('🏪 쿠폰을 저장하고, 신성의숲 인포메이션에 제시하세요', 250, 340); // 충분한 간격
     
-    // 브랜드 서명 (더 아래로)
+    // 브랜드 서명 (테두리와 충분한 간격 확보)
     ctx.fillStyle = '#999';
     ctx.font = '14px NexonGothic, Arial';
-    ctx.fillText('신성의 숲 × 귤나무 과수원', 250, 295);
+    ctx.fillText('신성의 숲 × 귤나무 과수원', 250, 365); // 테두리와 충분한 간격
     
     // 다운로드
     const link = document.createElement('a');
