@@ -2,6 +2,7 @@
 let currentScene = 1;
 let selectedTree = null;
 let gameResult = null;
+let currentCouponCode = null; // 현재 쿠폰 코드 저장
 
 // 상품 목록 (가이드에 따라)
 const prizes = [
@@ -200,8 +201,22 @@ function showResultScene() {
 function showCouponScene() {
     if (gameResult.type === 'nothing') return;
     
+    // HTML 쿠폰 화면의 상품명도 당첨 결과와 일치하도록 업데이트
     const couponAmount = document.getElementById('couponAmount');
+    const couponCode = document.querySelector('.coupon-code');
+    const couponExpire = document.querySelector('.coupon-expire');
+    
+    // 당첨된 상품에 따라 쿠폰 내용 설정
     couponAmount.textContent = gameResult.value;
+    
+    // 쿠폰 코드 생성 및 저장 (다운로드 쿠폰과 동일하게 사용)
+    currentCouponCode = generatePrettyCouponCode();
+    couponCode.textContent = `쿠폰코드: ${currentCouponCode}`;
+    
+    // 유효기간도 실제 다운로드 쿠폰과 동일하게 설정
+    const expiryDate = new Date();
+    expiryDate.setMonth(expiryDate.getMonth() + 1);
+    couponExpire.textContent = `유효기간: 수령일로부터 1개월 (${expiryDate.toLocaleDateString('ko-KR')}까지)`;
     
     showScene(5);
 }
@@ -332,8 +347,8 @@ function downloadCoupon() {
     ctx.font = 'bold 16px NexonGothic, Arial';
     ctx.fillText('✨ 쿠폰 코드 ✨', 250, 165);
     
-    // 예쁜 쿠폰 코드 - 완전히 검은색으로
-    const couponCode = generatePrettyCouponCode();
+    // 저장된 쿠폰 코드 사용 (HTML 화면과 동일)
+    const couponCode = currentCouponCode || generatePrettyCouponCode();
     
     // 메인 쿠폰 코드 텍스트 (70% 크기로 줄임)
     ctx.fillStyle = '#000000';
@@ -446,6 +461,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showScene(1);
             gameResult = null;
             selectedTree = null;
+            currentCouponCode = null; // 쿠폰 코드도 초기화
         }
     });
     
@@ -458,6 +474,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showScene(1);
         gameResult = null;
         selectedTree = null;
+        currentCouponCode = null; // 쿠폰 코드도 초기화
     });
 });
 
